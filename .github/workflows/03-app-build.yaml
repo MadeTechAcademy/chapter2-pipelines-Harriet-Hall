@@ -5,20 +5,20 @@ on:
       - main
 
 jobs:
-    runs-on: ubuntu-latest
-   
-    steps:
-      - name: Set Up Node.js
-        uses: actions/setup-node@v20
-    
-      - name: Checkout repo   
-        uses: actions/checkout@v4
+  runs-on: ubuntu-latest
+  
+  steps:
+    - name: Set Up Node.js
+      uses: actions/setup-node@v20
+  
+    - name: Checkout repo   
+      uses: actions/checkout@v4
 
-      - name: Install packages 
-        run: npm install 
+    - name: Install packages 
+      run: npm install 
 
-      - name: Prettify the code
-        run: npm run prettify
+    - name: Prettify the code
+      run: npm run prettify
 
-      - name: Run tests
-        run: npm run test
+    - name: Run tests
+      run: npm run test
