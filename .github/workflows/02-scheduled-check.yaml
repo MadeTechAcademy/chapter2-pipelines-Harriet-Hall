@@ -1,18 +1,20 @@
 name: CI Link Checker
+
 on: 
   schedule:
-  - cron: "5 12 * * *"
-
+    - cron: "10 12 * * *"
 jobs:
   link-checker:
     runs-on: ubuntu-latest
 
-    steps: 
-      uses: actions/setup-node@v4
-      with:
-        node-version: 'lts/*'
-    - name: Install broken-link-checker
-      run: npm install -g broken-link-checker
+    steps:
+      - name: Set Up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
 
-    - name: Run Link Checker 
-      run: npm broken-link-checker https://learn.madetech.com --exclude microsoft --exclude linkedin --exclude twitter --exclude codewars.com -ro
+      - name: Install broken-link-checker
+        run: npm install -g broken-link-checker
+
+      - name: Run Link Checker
+        run: npx broken-link-checker https://learn.madetech.com --exclude microsoft --exclude linkedin --exclude twitter --exclude codewars.com -ro
