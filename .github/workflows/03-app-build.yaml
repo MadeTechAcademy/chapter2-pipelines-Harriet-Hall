@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+defaults:
+  run:
+    working-directory: /home/runner/work/chapter2-pipelines-Harriet-Hall/chapter2-pipelines-Harriet-Hall/app
 
 jobs:
   build-app:
@@ -18,7 +21,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install packages 
-        working-directory: /home/runner/work/chapter2-pipelines-Harriet-Hall/chapter2-pipelines-Harriet-Hall/app
         run: npm install 
 
       - name: Prettify the code
