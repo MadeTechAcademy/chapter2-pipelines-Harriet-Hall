@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install packages 
+        working-directory: /app
         run: npm install 
 
       - name: Prettify the code
