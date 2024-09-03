@@ -2,7 +2,7 @@ name: CI Link Checker
 
 on: 
   schedule:
-    - cron: "10 12 * * *"
+    - cron: "15 12 * * *"
 jobs:
   link-checker:
     runs-on: ubuntu-latest
