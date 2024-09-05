@@ -19,14 +19,12 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Access PAT_TOKEN
-        env: 
-          super_secret: ${{ secrets.PAT_TOKEN }}
-
       - name: Checkout repo   
         uses: actions/checkout@v4
       
       - name: Install packages 
+        env: 
+          super_secret: ${{ secrets.PAT_TOKEN }}
         run: npm install 
   
       - name: Run tests
