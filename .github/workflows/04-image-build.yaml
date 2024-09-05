@@ -1,16 +1,24 @@
 name: docker-app
 
+on: 
+  workflow_dispatch
+
+defaults:
+  run:
+    working-directory: /home/runner/work/chapter2-pipelines-Harriet-Hall/chapter2-pipelines-Harriet-Hall/internal-app
+
+
 jobs:
-  build-app:
+  link-checker:
     runs-on: ubuntu-latest
 
-on:
-  push:
-    branches:
-      - main
-
     steps:
-    - name: Ubuntu version
-      run: lsb_release -a
+    - name: Checkout repo   
+      uses: actions/checkout@v4
 
-    - 
+    - name: Build docker image 
+      run: docker build -t docker-app -f Dockerfile .
+      
+    - name: See build history
+      run: docker history docker-app
+
