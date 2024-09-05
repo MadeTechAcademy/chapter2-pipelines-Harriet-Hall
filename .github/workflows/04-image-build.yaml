@@ -5,7 +5,7 @@ on:
 
 defaults:
   run:
-    working-directory: /home/runner/work/chapter2-pipelines-Harriet-Hall/chapter2-pipelines-Harriet-Hall/internal-app
+    working-directory: /home/runner/work/chapter2-pipelines-Harriet-Hall/chapter2-pipelines-Harriet-Hall/docker-app
 
 
 jobs:
