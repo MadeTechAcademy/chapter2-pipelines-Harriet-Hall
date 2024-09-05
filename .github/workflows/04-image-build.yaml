@@ -1,0 +1,14 @@
+name: docker-app
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+
+on:
+  push:
+    branches:
+      - main
+
+    steps:
+    - name: Ubuntu version
+      run: lsb_release -a
