@@ -5,11 +5,11 @@ on:
 
 defaults:
   run:
-    working-directory: /home/runner/work/chapter2-pipelines-Harriet-Hall/chapter2-pipelines-Harriet-Hall/docker-app
+    working-directory: ./docker-app
 
 
 jobs:
-  link-checker:
+  build-app:
     runs-on: ubuntu-latest
 
     steps:
