@@ -1,4 +1,4 @@
-name: CI Link Checker
+name: app-build-ex1
 on: 
   workflow_dispatch
 

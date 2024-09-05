@@ -1,4 +1,4 @@
-name: CI Link Checker - scheduled 
+name: app-build-ex2
 
 on: 
   schedule:
@@ -12,9 +12,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
-
-      - name: Install broken-link-checker
-        run: npm install -g broken-link-checker
-
+          
       - name: Run Link Checker
         run: npx broken-link-checker https://learn.madetech.com --exclude microsoft --exclude linkedin --exclude twitter --exclude codewars.com -ro
