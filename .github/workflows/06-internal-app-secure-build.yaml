@@ -1,0 +1,30 @@
+name: internal-app-ex6
+on:
+  workflow_dispatch
+  push:
+    branches:
+      - main
+
+defaults:
+  run:
+    working-directory: /home/runner/work/chapter2-pipelines-Harriet-Hall/chapter2-pipelines-Harriet-Hall/internal-app
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+
+
+steps:
+  - name: Set Up Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: '20'
+
+  - name: Checkout repo   
+    uses: actions/checkout@v4
+
+  - name: Install packages 
+    run: npm install 
+  
+  - name: Run tests
+    run: npm run test
