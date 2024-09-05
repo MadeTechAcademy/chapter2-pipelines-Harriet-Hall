@@ -19,6 +19,6 @@ jobs:
     - name: Build docker image 
       run: docker build -t docker-app -f Dockerfile .
 
-    - name: See build history
-      run: docker history docker-app
+    # - name: See build history
+    #   run: docker history docker-app
 
