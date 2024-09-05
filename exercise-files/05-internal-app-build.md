@@ -13,7 +13,7 @@ We would like the pipeline to run on each push to `main`
 - Add steps to the job which check out the code, support the node environment and run the necessary commands.
 - Move the config file into `.github/workflows` folder and commit & push your code.
 - Use the github web interface to find the pipeline and check the logs.
-- What went wrong?
+- What went wrong? ------> unauthenticated: User cannot be authenticated with the token provided.
 - Create a **short-lived** [CLASSIC Personal Access Token](https://github.com/settings/tokens/new?scopes=read:packages) in github with read:packages permissions and copy the value
 - Update the token in the `.npmrc` file with this value.
 - Commit & push your changes
