@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+defaults:
+  run:
+    working-directory: /home/runner/work/chapter2-pipelines-Harriet-Hall/chapter2-pipelines-Harriet-Hall/internal-app
 
 jobs:
   build-app:
