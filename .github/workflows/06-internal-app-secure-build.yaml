@@ -7,7 +7,7 @@ on:
 
 defaults:
   run:
-    working-directory: /home/runner/work/chapter2-pipelines-Harriet-Hall/chapter2-pipelines-Harriet-Hall/internal-app
+    working-directory: ./internal-app
 
 jobs:
   build-app:
@@ -24,7 +24,7 @@ jobs:
       
       - name: Install packages 
         env: 
-          super_secret: ${{ secrets.PAT_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: npm install 
   
       - name: Run tests
