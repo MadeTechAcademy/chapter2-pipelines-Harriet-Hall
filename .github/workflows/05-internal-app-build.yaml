@@ -1,0 +1,25 @@
+name: app-build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Set Up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Checkout repo   
+        uses: actions/checkout@v4
+
+      - name: Install packages 
+        run: npm install 
+      
+      - name: Run tests
+        run: npm run test
