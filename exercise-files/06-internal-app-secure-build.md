@@ -36,4 +36,4 @@ Using environment variables in github workflows: [Github docs](https://docs.gith
 - Check the docker deep dive course for an example of environment variable references in the `.npmrc` file
 
 ## Notes
-
+While Personal Access Tokens are a concenient way to access a system as only one key is required, they need to be properly managed. A PAT is 'personal' meaning that it belongs to an individual rather than a project/ an organisation. If the person with the access is no longer available but their access and expertise are neeced, time and money could be wasted resolving this issue.

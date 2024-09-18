@@ -22,7 +22,7 @@ We would like the pipeline to run on each push to `main`
 - Invalidate your github PAT
 
 ## Questions (write your answers in the notes section):
-- Which part of this is pipeline is insecure and why?
+- Which part of this is pipeline is insecure and why? 
 - What else could go wrong?
 
 ## Hints
@@ -31,4 +31,5 @@ We would like the pipeline to run on each push to `main`
 - Check the available runnable npm `scripts` in the `package.json` file
 
 ## Notes
+The PAT is insecure as its hardcoded into the npmrc file. This is accessable is version control and can be used to access private dependencies and reveal the inner workings of a project. 
 
