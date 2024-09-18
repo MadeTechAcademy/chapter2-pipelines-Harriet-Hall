@@ -19,10 +19,11 @@ excersize 7 - As we were looking at a workflow that had already been created, I 
 
 After some reflection and perhaps investigation while on your delivery
 
-1. Which pipeline types are used on your delivery?
+1. Which pipeline types are used on your delivery? 
+Scheduled, manual and those triggeed by pushing changes to github 
+
 1. What techniques are in place that make pipelines more secure on your delivery?
-
-
+Github secrets to prevent data breaches and ensureing others dont have access to the inner workings and cofiguration on the project 
 
 1. Describe something you have learned that you were able to use directly in your delivery. 
 
