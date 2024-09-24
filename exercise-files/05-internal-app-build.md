@@ -31,5 +31,6 @@ We would like the pipeline to run on each push to `main`
 - Check the available runnable npm `scripts` in the `package.json` file
 
 ## Notes
-The PAT is insecure as its hardcoded into the npmrc file. This is accessable is version control and can be used to access private dependencies and reveal the inner workings of a project. 
+The use of a GitHub Personal Access Token (PAT) can be insecure depending on who has access to it and how it is managed. If the PAT is committed to version control, it can expose private dependencies and the project’s inner workings, leading to various security and project management concerns. While GitHub implements measures to prevent accidental commits, this may not be the case with other providers - therefore its important to handle tokens carefully.
+Also, the expiry of a token is set by the user who creates them, the minimum amount of time github PAT tokens can be active is 1 day. It is the responsibility of the user to delete the token when no longer needed. Failure to do so can lead to further security concerns
 
