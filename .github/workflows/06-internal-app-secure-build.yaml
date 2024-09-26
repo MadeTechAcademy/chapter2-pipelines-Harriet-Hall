@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env: 
+  PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+
 defaults:
   run:
     working-directory: ./internal-app
@@ -23,8 +26,6 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Install packages 
-        env: 
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: npm install 
   
       - name: Run tests
