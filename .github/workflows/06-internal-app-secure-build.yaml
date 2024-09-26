@@ -6,7 +6,7 @@ on:
       - main
 
 env: 
-  TOKEN: ${{ secrets.PAT_TOKEN }}
+  PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
 
 defaults:
   run:
