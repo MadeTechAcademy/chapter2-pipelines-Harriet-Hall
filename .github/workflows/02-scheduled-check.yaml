@@ -1,0 +1,17 @@
+name: app-build-ex2
+
+on: 
+  schedule:
+    - cron: "*/10 * * * *"
+jobs:
+  link-checker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set Up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          
+      - name: Run Link Checker
+        run: npx broken-link-checker https://learn.madetech.com --exclude microsoft --exclude linkedin --exclude twitter --exclude codewars.com -ro

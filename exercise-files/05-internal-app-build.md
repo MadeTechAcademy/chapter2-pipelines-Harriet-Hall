@@ -13,7 +13,7 @@ We would like the pipeline to run on each push to `main`
 - Add steps to the job which check out the code, support the node environment and run the necessary commands.
 - Move the config file into `.github/workflows` folder and commit & push your code.
 - Use the github web interface to find the pipeline and check the logs.
-- What went wrong?
+- What went wrong? ------> # unauthenticated: User cannot be authenticated with the token provided.
 - Create a **short-lived** [CLASSIC Personal Access Token](https://github.com/settings/tokens/new?scopes=read:packages) in github with read:packages permissions and copy the value
 - Update the token in the `.npmrc` file with this value.
 - Commit & push your changes
@@ -22,7 +22,7 @@ We would like the pipeline to run on each push to `main`
 - Invalidate your github PAT
 
 ## Questions (write your answers in the notes section):
-- Which part of this is pipeline is insecure and why?
+- Which part of this is pipeline is insecure and why? 
 - What else could go wrong?
 
 ## Hints
@@ -31,4 +31,6 @@ We would like the pipeline to run on each push to `main`
 - Check the available runnable npm `scripts` in the `package.json` file
 
 ## Notes
+The use of a GitHub Personal Access Token (PAT) can be insecure depending on who has access to it and how it is managed. If the PAT is committed to version control, it can expose private dependencies and the project’s inner workings, leading to various security and project management concerns. While GitHub implements measures to prevent accidental commits, this may not be the case with other providers - therefore its important to handle tokens carefully.
+Also, the expiry of a token is set by the user who creates them, the minimum amount of time github PAT tokens can be active is 1 day. It is the responsibility of the user to delete the token when no longer needed. Failure to do so can lead to further security concerns
 

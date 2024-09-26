@@ -1,0 +1,30 @@
+name: app-build-ex3
+on:
+  push:
+    branches:
+      - main
+defaults:
+  run:
+    working-directory: ./app
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Set Up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Checkout repo   
+        uses: actions/checkout@v4
+
+      - name: Install packages 
+        run: npm install 
+
+      - name: Prettify the code
+        run: npm run prettify
+
+      - name: Run tests
+        run: npm run test

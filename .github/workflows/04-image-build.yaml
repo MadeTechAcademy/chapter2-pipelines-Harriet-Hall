@@ -1,0 +1,23 @@
+name: docker-app-ex4
+
+on: 
+  workflow_dispatch
+
+defaults:
+  run:
+    working-directory: ./docker-app
+
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo   
+      uses: actions/checkout@v4
+
+    - name: Build docker image 
+      run: docker build -t docker-app .
+
+    - name: See build history
+      run: docker history docker-app
